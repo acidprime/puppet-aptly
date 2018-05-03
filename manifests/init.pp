@@ -31,6 +31,7 @@ class aptly (
   $api_bind             = $aptly::params::api_bind,
   $api_nolock           = $aptly::params::api_nolock,
   $manage_xz_utils      = $aptly::params::manage_xz_utils,
+  $recurse_root_dir     = $aptly::params::recurse_root_dir,
 ) inherits aptly::params {
 
   class { '::aptly::install': } -> class { '::aptly::config':  } ~> class { '::aptly::service': } -> Class['::aptly']
